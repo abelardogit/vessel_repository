@@ -1,0 +1,10 @@
+controllers:
+    resource:
+        path: ../src/Vessel/Infrastructure/API/Controllers/
+        namespace: Syntelix\Controller
+    type: attribute
+
+
+vessel_register:
+    path: /register
+    controller: Syntelix\Vessel\Infrastructure\API\Controllers\RegisterVessel::register
