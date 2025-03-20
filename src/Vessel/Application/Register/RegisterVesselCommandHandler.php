@@ -10,14 +10,14 @@ use Syntelix\Common\Domain\Exceptions\SyntelixExceptions;
 use Syntelix\Vessel\Domain\Entity\Vessel;
 use Syntelix\Vessel\Domain\Repository\VesselRepository;
 
-readonly class RegisterVesselCommandHandler implements CommandHandler
+ class RegisterVesselCommandHandler implements CommandHandler
 {
     public function __construct(private VesselRepository $repository){}
 
     /**
      * @throws SyntelixExceptions
      */
-    public function __invoke(RegisterVesselCommand $command): string
+    public function __invoke(RegisterVesselCommand $command): void
     {
         $aVessel = Vessel::fromCreate(
             imoNumber: $command->imoNumber(),
@@ -25,7 +25,5 @@ readonly class RegisterVesselCommandHandler implements CommandHandler
         );
 
         $this->repository->save($aVessel);
-
-        return $aVessel->id();
     }
 }
