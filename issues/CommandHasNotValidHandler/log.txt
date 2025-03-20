@@ -1,5 +1,4 @@
-El error comienza en la línea 35 del controlador
+This issue starts at
 src/Vessel/Infrastructure/API/Controllers/RegisterVessel.php:35
-donde al bus le pasamos el comando que contiene toda la info
-relacionada con el registro de la embarcación.
-
+where I pass to the bus an instance of my command
+You may find here screenshots taken of the call from Postman.
